@@ -13,3 +13,5 @@ let make = () => {
     "."->text
   </div>;
 };
+
+let default = make;

@@ -17,4 +17,4 @@ const words = [
 
 const json = JSON.stringify(words);
 
-export default json;
+exports.default = json;

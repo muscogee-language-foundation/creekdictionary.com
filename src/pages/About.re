@@ -29,3 +29,5 @@ let make = () => {
     </p>
   </div>;
 };
+
+let default = make;

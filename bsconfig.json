@@ -14,5 +14,10 @@
     }
   ],
   // What bs dependencies there are which BuckleScript needs to compile ahead of time
-  "bs-dependencies": ["reason-react", "@glennsl/bs-json"]
+  "bs-dependencies": [
+    "reason-react",
+    "@glennsl/bs-json",
+    "bs-dynamic-import",
+    "reason-loadable"
+  ]
 }

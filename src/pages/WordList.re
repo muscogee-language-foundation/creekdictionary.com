@@ -46,3 +46,5 @@ let make = () => {
     <div className="p-6"> matches </div>
   </section>;
 };
+
+let default = make;
