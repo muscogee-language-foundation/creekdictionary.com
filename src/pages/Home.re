@@ -20,7 +20,7 @@ let make = () => {
     );
 
   let {words, encodedWords} = state;
-  <section className="pb-16 pt-48 px-6 flex justify-center">
+  <section className="pb-16 pt-64 px-6 flex justify-center">
     <form
       onSubmit={e => {
         ReactEvent.Form.preventDefault(e);

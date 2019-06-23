@@ -23,7 +23,7 @@ server
       <html lang="">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ReasonReact SSR Starter</title>
+        <title>Muscogee (Creek) Dictionary</title>
         <link ref="stylesheet" href="/assets/${asset["main.css"]}">
         <script src="/assets/${asset["main.js"]}" defer></script>
         <body>

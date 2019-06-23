@@ -6,10 +6,10 @@ let make = () => {
     {switch (url.path) {
      | [] => <Home />
      | ["about"] => <About />
-     | ["resources"] => <Resources />
-     | ["history"] => <History />
+     //  | ["resources"] => <Resources />
+     //  | ["history"] => <History />
      | ["search"] => <WordList />
-     | [id] => <Word id />
+     //  | [id] => <Word id />
      | _ => <NotFound />
      }}
   </Frame>;

@@ -12,7 +12,7 @@ let make = () => {
         setNavbar(_bool => false);
       }}
       className="flex items-center flex-shrink-0 text-white mr-6 cursor-pointer">
-      "M(C)D"->text
+      "Muscogee (Creek) Dictionary"->text
     </div>
     <div className="block lg:hidden">
       <button
@@ -54,7 +54,7 @@ let make = () => {
             push("/resources");
             setNavbar(_bool => false);
           }}
-          className="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-4 cursor-pointer">
+          className="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-4 cursor-pointer lg:hidden hidden">
           "Resources"->text
         </a>
         <a
@@ -62,7 +62,7 @@ let make = () => {
             push("/history");
             setNavbar(_bool => false);
           }}
-          className="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white cursor-pointer">
+          className="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white cursor-pointer lg:hidden hidden">
           "History"->text
         </a>
       </div>

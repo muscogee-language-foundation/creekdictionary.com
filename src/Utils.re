@@ -4,6 +4,7 @@ type entry = {
   english: string,
   creek: string,
   meaning: string,
+  tags: string,
 };
 
 type entries = array(entry);
@@ -14,6 +15,7 @@ module Decode = {
       english: json |> field("english", string),
       creek: json |> field("creek", string),
       meaning: json |> field("meaning", string),
+      tags: json |> field("tags", string),
     };
 
   let decodeEntries = Json.Decode.(array(decodeEntry));
