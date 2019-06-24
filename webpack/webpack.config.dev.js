@@ -25,13 +25,18 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"]
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+            plugins: ["@babel/plugin-syntax-dynamic-import"]
           }
         }
       },
       {
         test: /\.css$/,
-        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader", options: { importLoaders: 1 } },
+          { loader: "postcss-loader" }
+        ]
       },
       {
         test: /\.html$/,
@@ -43,6 +48,7 @@ module.exports = {
       }
     ]
   },
+  stats: "minimal",
   plugins: [
     // Plugin to clean the build folder on every build
     new CleanWebpackPlugin(),

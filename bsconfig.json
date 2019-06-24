@@ -5,7 +5,7 @@
   // The reason jsx syntax
   "reason": { "react-jsx": 3 },
   // The folder to look in to find reason files
-  "sources": ["src"],
+  "sources": [{ "dir": "src", "subdirs": true }],
   // How to output the files
   "package-specs": [
     {
@@ -14,5 +14,10 @@
     }
   ],
   // What bs dependencies there are which BuckleScript needs to compile ahead of time
-  "bs-dependencies": ["reason-react", "bs-css"]
+  "bs-dependencies": [
+    "reason-react",
+    "@glennsl/bs-json",
+    "bs-dynamic-import",
+    "reason-loadable"
+  ]
 }

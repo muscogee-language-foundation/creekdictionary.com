@@ -1,37 +1,14 @@
-module Styles = {
-  open Css;
-  let container = style([padding(px(20)), fontFamily("sans-serif")]);
-  let card =
-    style([
-      maxWidth(px(500)),
-      marginTop(px(20)),
-      margin2(~v=px(0), ~h=auto),
-      padding(px(20)),
-      border(px(1), solid, hex("eee")),
-      borderRadius(px(3)),
-      boxShadow(
-        ~x=px(0),
-        ~y=px(0),
-        ~blur=px(2),
-        ~spread=px(2),
-        hex("eee"),
-      ),
-    ]);
-
-  let header = value => style([color(hex(value))]);
-  let content = style([color(hex("222"))]);
-};
-
-/* Make the component */
-let make = _children => {
-  <div className=Styles.container>
-    <div className=Styles.card>
-      <h1 className={Styles.header("222")}>
-        "Reason React!"->ReasonReact.string
-      </h1>
-      <p className=Styles.content>
-        {j|Type safe styles in Reason React FTW! 😎|j}->ReasonReact.string
-      </p>
-    </div>
-  </div>;
+let make = () => {
+  let url = ReasonReact.Router.useUrl();
+  <Frame>
+    {switch (url.path) {
+     | [] => <Home />
+     | ["about"] => <LazyAbout />
+     //  | ["resources"] => <Resources />
+     //  | ["history"] => <History />
+     | ["search"] => <LazyWordList />
+     //  | [id] => <Word id />
+     | _ => <LazyNotFound />
+     }}
+  </Frame>;
 };
