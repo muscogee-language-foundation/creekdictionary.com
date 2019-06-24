@@ -37,7 +37,7 @@ server
 
         <meta property="og:title" content="Muscogee (Creek) Dictionary" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="" />
+        <meta property="og:url" content="https://creekdictionary.com" />
         <meta
           property="og:description"
           content="Muscogee (CreeK) Dictionary is a web app to make it easier to search for the meaning of Muscogee (Creek) words."

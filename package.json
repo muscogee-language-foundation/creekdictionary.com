@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently \"npm run js-watch\" \"npm run bsb-watch\"",
     "build": "npm run bsb-clean && npm run bsb-build && npm run js-build",
-    "serve": "node src/server.js",
+    "serve": "yarn build && node src/server.js",
     "js-watch": "webpack-dev-server --hot --inline --config webpack/webpack.config.dev.js",
     "js-build": "webpack --config webpack/webpack.config.prod.js ",
     "bsb-watch": "bsb -make-world -w",
