@@ -21,6 +21,7 @@ let make = () => {
       <a
         className="text-blue-500 hover:text-blue-400"
         rel="noopener noreferrer"
+        target="_blank"
         href="https://github.com/nativesintech/muscogee-creek-dictionary">
         "nativesintech/muscogee-creek-dictionary"->text
       </a>
