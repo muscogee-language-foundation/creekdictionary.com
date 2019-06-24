@@ -2,5 +2,5 @@ open Utils;
 
 [@react.component]
 let make = () => {
-  <div> "Resources"->text </div>;
+  <div className="pb-16"> "Resources"->text </div>;
 };

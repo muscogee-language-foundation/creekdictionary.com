@@ -45,7 +45,7 @@ module.exports = {
       paths: glob.sync(`./lib/js/src/**/*`, {
         nodir: true
       }),
-      whitelist: ["html", "body"],
+      whitelist: ["html", "body", "root"],
       extractors: [
         {
           extractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],

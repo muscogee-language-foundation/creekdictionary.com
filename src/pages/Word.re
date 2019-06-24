@@ -2,5 +2,5 @@ open Utils;
 
 [@react.component]
 let make = (~id) => {
-  <div> {j|Word $id|j}->text </div>;
+  <div className="pb-16"> {j|Word $id|j}->text </div>;
 };

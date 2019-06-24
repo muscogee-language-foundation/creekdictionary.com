@@ -13,8 +13,5 @@ module Lazy: T = {
 
 [@react.component]
 let make = () => {
-  <React.Suspense
-    maxDuration=1000 fallback={<div> "Loading ..."->React.string </div>}>
-    <Lazy />
-  </React.Suspense>;
+  <React.Suspense fallback=React.null> <Lazy /> </React.Suspense>;
 };
