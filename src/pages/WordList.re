@@ -16,8 +16,8 @@ let make = () => {
       ->flatMap(words => {
           let matches =
             Belt.Array.keep(Utils.data, entry =>
-              Js.String.includes(entry.creek, words)
-              || Js.String.includes(entry.english, words)
+              Js.String.includes(words, entry.creek)
+              || Js.String.includes(words, entry.english)
               || Belt.Array.some(Js.String.split(",", entry.tags), tag =>
                    Js.String.includes(tag, words)
                  )
