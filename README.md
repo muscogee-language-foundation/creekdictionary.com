@@ -1,41 +1,43 @@
-# Reason React SSR Starter
+# Muscogee Creek Dictionary
 
 ## Summary
 
-A simple ReasonReact starter using `reason-react`, `bs-css` with `emotion`, and `webpack`.
+The purpose of this application is to help Muscogee Language learners search for terms more easily and to be empowered to speak mvskoke emponvkv.
 
-## How to Use
+## Stack
 
-### Development / From the Client
+- FE - ReasonML, ReasonReact, TailwindCSS
+- BE - Express/Node
+- Hosting - DigitalOcean
 
-From the command line, clone the repository to your machine.
+## Getting Started
+
+To run this project locally follow these steps from the command line:
+
+1. Clone the repositry
 
 ```shell
-git clone git@github.com:arecvlohe/reason-react-ssr-starter.git
+git clone https://github.com/nativesintech/muscogee-creek-dictionary.git
 ```
 
-Next, from the command line, `cd` into the repository.
+2. Go into directory
 
 ```shell
-cd reason-react-ssr-starter
+cd muscogee-creek-dictionary
 ```
 
-Then install dependencies.
+3. Install dependencies
 
 ```shell
 yarn install
 ```
 
-Last, run the application.
+4. Start the project in development mode
 
 ```shell
-yarn run start
+yarn start
 ```
 
-### Production / From the Server
+## Contributing
 
-First build the application and serve it.
-
-```shell
-yarn run build && npm run serve
-```
+Natives in Tech would love for you to contribute to the project. We accept all kinds of pull requests. Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) so you are aware of the ground rules for engaging with others in this repository.
