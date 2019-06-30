@@ -6,7 +6,7 @@ let make = () => {
     <h1 className="text-6xl"> "About"->text </h1>
     <p className="mb-2">
       {(
-         "The Muscogee (Creek) Dictionary is inteneded to be a companion for those who know the Muscogee (Creek) "
+         "The Muscogee (Creek) Dictionary is intended to be a companion for those who know the Muscogee (Creek) "
          ++ "alphabet, a few words, and who have access to fluent speakers. We hope using this app empowers you "
          ++ "to use the language more with friends and family."
        )
