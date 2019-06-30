@@ -426,6 +426,126 @@ const words = [
     creek: "holwvke",
     meaning: "bad",
     tags: "adjective"
+  },
+  {
+    english: "food",
+    creek: "hompetv",
+    meaning: "food",
+    tags: "adjective"
+  },
+  {
+    english: "meal",
+    creek: "hompetv hakv",
+    meaning: "meal",
+    tags: "adjective"
+  },
+  {
+    english: "meat",
+    creek: "vpeswv",
+    meaning: "meat",
+    tags: "adjective"
+  },
+  {
+    english: "beef",
+    creek: "wakvpeswv",
+    meaning: "beef",
+    tags: "adjective"
+  },
+  {
+    english: "pork",
+    creek: "sokhvpeswv",
+    meaning: "pork",
+    tags: "adjective"
+  },
+  {
+    english: "salt pork",
+    creek: "tosenv",
+    meaning: "salt pork",
+    tags: "adjective"
+  },
+  {
+    english: "bread",
+    creek: "tvklike",
+    meaning: "bread",
+    tags: "adjective"
+  },
+  {
+    english: "sour corn bread",
+    creek: "vce tvklik kvmokse",
+    meaning: "sour corn bread",
+    tags: "adjective"
+  },
+  {
+    english: "blue bread",
+    creek: "cvtvhakv",
+    meaning: "blue bread",
+    tags: "adjective"
+  },
+  {
+    english: "fry bread",
+    creek: "tvklik svkmorke",
+    meaning: "fry bread",
+    tags: "adjective"
+  },
+  {
+    english: "milk",
+    creek: "wakvpesse",
+    meaning: "milk",
+    tags: "adjective"
+  },
+  {
+    english: "butter",
+    creek: "wakvpesse neha",
+    meaning: "butter",
+    tags: "adjective"
+  },
+  {
+    english: "coffee",
+    creek: "kafe",
+    meaning: "coffee",
+    tags: "adjective"
+  },
+  {
+    english: "tea",
+    creek: "vsse",
+    meaning: "tea",
+    tags: "adjective"
+  },
+  {
+    english: "corn",
+    creek: "vce",
+    meaning: "corn",
+    tags: "adjective"
+  },
+  {
+    english: "flour",
+    creek: "hockvte",
+    meaning: "flour",
+    tags: "adjective"
+  },
+  {
+    english: "sugar",
+    creek: "vsokolv",
+    meaning: "sugar",
+    tags: "adjective"
+  },
+  {
+    english: "salt",
+    creek: "okcvnwv",
+    meaning: "salt",
+    tags: "adjective"
+  },
+  {
+    english: "black pepper",
+    creek: "homuce",
+    meaning: "black pepper",
+    tags: "adjective"
+  },
+  {
+    english: "black pepper",
+    creek: "homuce",
+    meaning: "black pepper",
+    tags: "adjective"
   }
 ];
 
