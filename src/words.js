@@ -431,121 +431,115 @@ const words = [
     english: "food",
     creek: "hompetv",
     meaning: "food",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "meal",
     creek: "hompetv hakv",
     meaning: "meal",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "meat",
     creek: "vpeswv",
     meaning: "meat",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "beef",
     creek: "wakvpeswv",
     meaning: "beef",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "pork",
     creek: "sokhvpeswv",
     meaning: "pork",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "salt pork",
     creek: "tosenv",
     meaning: "salt pork",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "bread",
     creek: "tvklike",
     meaning: "bread",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "sour corn bread",
     creek: "vce tvklik kvmokse",
     meaning: "sour corn bread",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "blue bread",
     creek: "cvtvhakv",
     meaning: "blue bread",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "fry bread",
     creek: "tvklik svkmorke",
     meaning: "fry bread",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "milk",
     creek: "wakvpesse",
     meaning: "milk",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "butter",
     creek: "wakvpesse neha",
     meaning: "butter",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "coffee",
     creek: "kafe",
     meaning: "coffee",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "tea",
     creek: "vsse",
     meaning: "tea",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "corn",
     creek: "vce",
     meaning: "corn",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "flour",
     creek: "hockvte",
     meaning: "flour",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "sugar",
     creek: "vsokolv",
     meaning: "sugar",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "salt",
     creek: "okcvnwv",
     meaning: "salt",
-    tags: "adjective"
+    tags: "food"
   },
   {
     english: "black pepper",
     creek: "homuce",
     meaning: "black pepper",
-    tags: "adjective"
-  },
-  {
-    english: "black pepper",
-    creek: "homuce",
-    meaning: "black pepper",
-    tags: "adjective"
+    tags: "food"
   }
 ];
 
