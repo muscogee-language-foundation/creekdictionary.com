@@ -540,6 +540,78 @@ const words = [
     creek: "homuce",
     meaning: "black pepper",
     tags: "food"
+  },
+  {
+    english: "chair",
+    creek: "ohliketv",
+    meaning: "chair",
+    tags: "house"
+  },
+  {
+    english: "table",
+    creek: "ohhompetv",
+    meaning: "table",
+    tags: "house"
+  },
+  {
+    english: "cup",
+    creek: "sesketv",
+    meaning: "cup",
+    tags: "house"
+  },
+  {
+    english: "floor",
+    creek: "taktoputake",
+    meaning: "floor",
+    tags: "house"
+  },
+  {
+    english: "wall",
+    creek: "cuko hospv",
+    meaning: "wall",
+    tags: "house"
+  },
+  {
+    english: "bag",
+    creek: "sukcv",
+    meaning: "bag",
+    tags: "house"
+  },
+  {
+    english: "fireplace",
+    creek: "totkv hute",
+    meaning: "fireplace",
+    tags: "house"
+  },
+  {
+    english: "window/mirror",
+    creek: "est akheckv",
+    meaning: "window/mirror",
+    tags: "house"
+  },
+  {
+    english: "bathrooom",
+    creek: "cokuce",
+    meaning: "bathrooom",
+    tags: "house"
+  },
+  {
+    english: "bed",
+    creek: "topv",
+    meaning: "bed",
+    tags: "house"
+  },
+  {
+    english: "closet",
+    creek: "accvk hute",
+    meaning: "closet",
+    tags: "house"
+  },
+  {
+    english: "house",
+    creek: "cuko",
+    meaning: "house",
+    tags: "house"
   }
 ];
 
