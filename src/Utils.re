@@ -31,5 +31,5 @@ let never = _bool => false;
 
 let push = ReasonReact.Router.push;
 
-[@bs.val] external encodeURIComponent: string => string = "";
-[@bs.val] external decodeURIComponent: string => string = "";
+[@bs.val] external encodeURIComponent: string => string = "encodeURIComponent";
+[@bs.val] external decodeURIComponent: string => string = "decodeURIComponent";
