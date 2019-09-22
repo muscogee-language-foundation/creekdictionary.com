@@ -11,23 +11,28 @@ type state = {
 [@react.component]
 let make =
     (~modifyButtonCss=None, ~modifySearchCss=None, ~modifyContainerCss=None) => {
+  let location = ReasonReact.Router.dangerouslyGetInitialUrl();
+  let query = location.search;
+  let words = query |> decodeURIComponent |> extractQuery;
   let (state, dispatch) =
     React.useReducer(
       (_state, action) =>
         switch (action) {
         | Input(words) => {words, encodedWords: encodeURIComponent(words)}
         },
-      {words: "", encodedWords: ""},
+      {words, encodedWords: encodeURIComponent(words)},
     );
 
   let {words, encodedWords} = state;
+
   <div className={Belt.Option.getWithDefault(modifyContainerCss, "")}>
     <form
       onSubmit={e => {
         ReactEvent.Form.preventDefault(e);
-        push({j|/search?query=$encodedWords|j});
+        push({j|/search?q=$encodedWords|j});
       }}>
       <input
+        autoFocus=true
         value=words
         onChange={e => {
           let value = ReactEvent.Form.target(e)##value;
