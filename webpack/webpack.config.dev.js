@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   // The file that is the main point of access for the SPA
@@ -50,6 +51,10 @@ module.exports = {
   },
   stats: "minimal",
   plugins: [
+    new Dotenv({
+      path: "./.env.dev",
+      safe: true
+    }),
     // Plugin to clean the build folder on every build
     new CleanWebpackPlugin(),
     // Plugin to create the index.html file and inject the script which

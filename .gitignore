@@ -3,3 +3,5 @@ node_modules
 lib
 .merlin
 dist
+.env.prod
+.env.dev

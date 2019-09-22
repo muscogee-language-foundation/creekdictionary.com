@@ -7,6 +7,7 @@ const ManifestPlugin = require("webpack-manifest-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const { StatsWriterPlugin } = require("webpack-stats-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: path.join(__dirname, "../src/client.js"),
@@ -36,6 +37,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new Dotenv({
+      path: "./.env.prod",
+      safe: true
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].[hash].css",
