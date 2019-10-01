@@ -1,13 +1,14 @@
-const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { StatsWriterPlugin } = require("webpack-stats-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 const glob = require("glob");
+const ManifestPlugin = require("webpack-manifest-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const ManifestPlugin = require("webpack-manifest-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const path = require("path");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
-const { StatsWriterPlugin } = require("webpack-stats-plugin");
-const Dotenv = require("dotenv-webpack");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: path.join(__dirname, "../src/client.js"),
@@ -65,7 +66,11 @@ module.exports = {
     })
   ],
   optimization: {
-    minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()],
+    minimizer: [
+      new TerserPlugin(),
+      new CompressionPlugin(),
+      new OptimizeCSSAssetsPlugin()
+    ],
     splitChunks: {
       cacheGroups: {
         styles: {
