@@ -28,6 +28,17 @@ let make = () => {
       "."->text
     </p>
     <p className="mb-2">
+      "The reference material for this searchable dictionary is "->text
+      <a
+        className="text-blue-500 hover:text-blue-400"
+        rel="noopener noreferrer"
+        href="https://archive.org/details/englishandmusko00unkngoog/page/n7"
+        target="_blank">
+        "English and Muskokee Dictionary by Robert McGill Loughridge, David M. Hodge"
+        ->text
+      </a>
+    </p>
+    <p className="mb-2">
       "The Muscogee (Creek) Dictionary is a project of Natives in Tech. Natives in Tech is a coalition of Native and non-Native developers whose mission is to empower Native peoples through software development."
       ->text
     </p>
