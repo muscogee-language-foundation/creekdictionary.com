@@ -8,7 +8,7 @@ type action =
 
 let initialState = {result: Relude.AsyncResult.init};
 
-let reducer = (action, state) => {
+let reducer = (state, action) => {
   switch (action) {
   | FetchWords =>
     let location = ReasonReact.Router.dangerouslyGetInitialUrl();
@@ -36,7 +36,7 @@ let reducer = (action, state) => {
 let useApi = () => {
   let url = ReasonReact.Router.useUrl();
 
-  let (state, send) = ReludeReact.Reducer.useReducer(initialState, reducer);
+  let (state, send) = ReludeReact.Reducer.useReducer(reducer, initialState);
 
   ReludeReact.Effect.useOnMount(() => send(FetchWords));
 
