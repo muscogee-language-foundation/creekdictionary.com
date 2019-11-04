@@ -21,6 +21,7 @@
     "bs-fetch": "0.5.0",
     "express": "4.17.1",
     "normalize.css": "8.0.1",
+    "prerender-node": "3.2.5",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "reason-loadable": "0.6.2",

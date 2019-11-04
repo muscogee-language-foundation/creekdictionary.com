@@ -2,6 +2,7 @@ const express = require("express");
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const path = require("path");
+const prerender = require("prerender-node");
 
 const { make } = require("../lib/js/src/App");
 const {
@@ -15,6 +16,7 @@ const server = express();
 server
   .disable("x-powered-by")
   .use("/assets", express.static(path.join(__dirname, "../dist")))
+  .use(prerender)
   .get("/*", (_req, res) => {
     const html = ReactDOMServer.renderToString(React.createElement(App));
 
