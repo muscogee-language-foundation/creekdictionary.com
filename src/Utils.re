@@ -1,3 +1,7 @@
+[@bs.val] external encodeURIComponent: string => string = "encodeURIComponent";
+[@bs.val] external decodeURIComponent: string => string = "decodeURIComponent";
+[@bs.val] external apiUrl: string = "process.env.API_URL";
+
 let (<<) = Relude.Function.Infix.(<<);
 
 type entry = {
@@ -37,6 +41,12 @@ let extractQuery =
   << Relude.Array.at(1)
   << Relude.String.splitArray(~delimiter="=");
 
-[@bs.val] external encodeURIComponent: string => string = "encodeURIComponent";
-[@bs.val] external decodeURIComponent: string => string = "decodeURIComponent";
-[@bs.val] external apiUrl: string = "process.env.API_URL";
+let toLocaleLowerAndTrim = s => {
+  s |> Js.String.toLocaleLowerCase |> Js.String.trim;
+};
+
+let includesCaseInsensitive = (~target, ~search) => {
+  let s = search |> toLocaleLowerAndTrim;
+  let t = target |> toLocaleLowerAndTrim;
+  Relude.String.contains(~search=s, t);
+};
