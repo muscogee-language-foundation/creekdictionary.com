@@ -26,12 +26,12 @@ let reducer = (useLocalData, state, action) => {
     let location = ReasonReact.Router.dangerouslyGetInitialUrl();
     let query = location.search;
     let url = Utils.apiUrl ++ Utils.decodeURIComponent(query);
-    let term =
+    let foundWords =
       Js.String.split("=", query)
       ->Belt.Array.get(1)
-      ->Belt.Option.getWithDefault("");
-    let foundTerms = find(term, decodedWordsData.data);
-    let result: Utils.entries = {data: foundTerms};
+      ->Belt.Option.getWithDefault("")
+      ->find(decodedWordsData.data);
+    let result: Utils.entries = {data: foundWords};
 
     useLocalData
       ? ReludeReact.Reducer.Update({
