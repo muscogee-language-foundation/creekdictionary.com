@@ -28,7 +28,7 @@ let make = () => {
                     </div>
                     <div className="flex flex-wrap">
                       {result.data
-                       |> Relude.Array.map(entry => <Match entry />)
+                       |> Relude.Array.map(entry => <Match key=entry.creek entry />)
                        |> React.array}
                     </div>
                   </div>,
