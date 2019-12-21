@@ -46,7 +46,7 @@ let toLocaleLowerAndTrim = s => {
 };
 
 let includesCaseInsensitive = (~target, ~search) => {
-  let s = search |> toLocaleLowerAndTrim;
+  let s = search |> toLocaleLowerAndTrim |> decodeURIComponent;
   let t = target |> toLocaleLowerAndTrim;
   Relude.String.contains(~search=s, t);
 };
