@@ -2,8 +2,6 @@
 [@bs.val] external decodeURIComponent: string => string = "decodeURIComponent";
 [@bs.val] external apiUrl: string = "process.env.API_URL";
 
-let (<<) = Relude.Function.Infix.(<<);
-
 type entry = {
   english: string,
   creek: string,
@@ -36,10 +34,11 @@ let push = ReasonReact.Router.push;
 
 let replace = ReasonReact.Router.replace;
 
-let extractQuery =
-  Relude.Option.getOrElse("")
-  << Relude.Array.at(1)
-  << Relude.String.splitArray(~delimiter="=");
+let extractQuery = query => {
+  Js.String.split("=", query)
+  ->Belt.Array.get(1)
+  ->Belt.Option.getWithDefault("");
+};
 
 let toLocaleLowerAndTrim = s => {
   s |> Js.String.toLocaleLowerCase |> Js.String.trim;
@@ -48,5 +47,12 @@ let toLocaleLowerAndTrim = s => {
 let includesCaseInsensitive = (~target, ~search) => {
   let s = search |> toLocaleLowerAndTrim |> decodeURIComponent;
   let t = target |> toLocaleLowerAndTrim;
-  Relude.String.contains(~search=s, t);
+  Js.String.includes(s, t);
+};
+
+let find = (search, entries) => {
+  Belt.Array.keep(entries, (entry: entry) =>
+    includesCaseInsensitive(~target=entry.creek, ~search)
+    || includesCaseInsensitive(~target=entry.english, ~search)
+  );
 };

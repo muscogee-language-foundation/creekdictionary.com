@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { GenerateSW } = require("workbox-webpack-plugin");
 const { StatsWriterPlugin } = require("webpack-stats-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
@@ -13,7 +14,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
   entry: path.join(__dirname, "../src/client.js"),
   output: {
-    filename: "[name].[hash].js",
+    filename: "[name]-[hash].js",
     path: path.join(__dirname, "../dist"),
     publicPath: "/assets/"
   },
@@ -38,14 +39,22 @@ module.exports = {
     ]
   },
   plugins: [
+    new GenerateSW({
+      runtimeCaching: [
+        {
+          urlPattern: /assets/,
+          handler: "CacheFirst"
+        }
+      ]
+    }),
     new Dotenv({
       path: "./.env.prod",
       safe: true
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].[hash].css",
-      chunkFilename: "[id].[hash].css"
+      filename: "[name]-[hash].css",
+      chunkFilename: "[name]-[hash].css"
     }),
     new PurgecssPlugin({
       paths: glob.sync(`./lib/js/src/**/*`, {
