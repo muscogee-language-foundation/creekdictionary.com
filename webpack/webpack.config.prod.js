@@ -13,7 +13,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
   entry: path.join(__dirname, "../src/client.js"),
   output: {
-    filename: "[name].[hash].js",
+    filename: "[name]-[hash].js",
     path: path.join(__dirname, "../dist"),
     publicPath: "/assets/"
   },
@@ -44,8 +44,8 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].[hash].css",
-      chunkFilename: "[id].[hash].css"
+      filename: "[name]-[hash].css",
+      chunkFilename: "[name]-[hash].css"
     }),
     new PurgecssPlugin({
       paths: glob.sync(`./lib/js/src/**/*`, {

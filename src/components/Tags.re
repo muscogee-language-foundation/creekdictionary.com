@@ -1,7 +1,7 @@
 open Utils;
 
 [@react.component]
-let make = (entry: entry) => {
+let make = (~entry: entry) => {
   <div>
     {Belt.Array.map(Js.String.split(",", entry.tags), tag =>
        <span

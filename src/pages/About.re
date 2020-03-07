@@ -37,6 +37,7 @@ let make = () => {
         "English and Muskokee Dictionary by Robert McGill Loughridge, David M. Hodge"
         ->text
       </a>
+      "."->text
     </p>
     <p className="mb-2">
       "The Muscogee (Creek) Dictionary is a project of Natives in Tech. Natives in Tech is a coalition of Native and non-Native developers whose mission is to empower Native peoples through software development."
