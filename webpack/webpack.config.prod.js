@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { GenerateSW } = require("workbox-webpack-plugin");
 const { StatsWriterPlugin } = require("webpack-stats-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
@@ -38,6 +39,14 @@ module.exports = {
     ]
   },
   plugins: [
+    new GenerateSW({
+      runtimeCaching: [
+        {
+          urlPattern: /assets/,
+          handler: "CacheFirst"
+        }
+      ]
+    }),
     new Dotenv({
       path: "./.env.prod",
       safe: true

@@ -15,7 +15,10 @@ const server = express();
 
 server
   .disable("x-powered-by")
-  .use("/assets", express.static(path.join(__dirname, "../dist")))
+  .use(
+    "/assets",
+    express.static(path.join(__dirname, "../dist"), { maxAge: "30d" })
+  )
   .use(prerender)
   .get("/*", (_req, res) => {
     const html = ReactDOMServer.renderToString(React.createElement(App));
