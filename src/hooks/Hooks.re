@@ -4,67 +4,55 @@ let wordsData = Js.Dict.fromList([("data", words)]) |> Js.Json.object_;
 
 let decodedWordsData = Utils.Decode.decodeEntries(wordsData);
 
-let find = search =>
-  Relude.Array.filter((entry: Utils.entry) =>
-    Utils.includesCaseInsensitive(~target=entry.creek, ~search)
-    || Utils.includesCaseInsensitive(~target=entry.english, ~search)
-  );
+type remoteData('a, 'b) =
+  | Pending
+  | Loading
+  | Complete(Belt.Result.t('a, 'b));
 
-type state = {
-  result: Relude.AsyncResult.t(Utils.entries, ReludeFetch.Error.t(string)),
-};
+type data = remoteData(Utils.entries, string);
+
 type action =
   | FetchWords
   | FetchWordsSuccess(Utils.entries)
-  | FetchWordsError(ReludeFetch.Error.t(string));
+  | FetchWordsError(string);
 
-let initialState = {result: Relude.AsyncResult.init};
+type state = {result: remoteData(Utils.entries, string)};
 
-let reducer = (useLocalData, state, action) => {
-  switch (action) {
-  | FetchWords =>
-    let location = ReasonReact.Router.dangerouslyGetInitialUrl();
-    let query = location.search;
-    let url = Utils.apiUrl ++ Utils.decodeURIComponent(query);
-    let foundWords =
-      Js.String.split("=", query)
-      ->Belt.Array.get(1)
-      ->Belt.Option.getWithDefault("")
-      ->find(decodedWordsData.data);
-    let result: Utils.entries = {data: foundWords};
-
-    useLocalData
-      ? ReludeReact.Reducer.Update({
-          result: Relude.AsyncResult.completeOk(result),
-        })
-      : ReludeReact.Reducer.UpdateWithIO(
-          {result: state.result |> Relude.AsyncResult.toBusy},
-          ReludeFetch.get(url)
-          |> Relude.IO.flatMap(a =>
-               ReludeFetch.Response.json(a)
-               |> Relude.IO.map(Utils.Decode.decodeEntries)
-             )
-          |> Relude.IO.bimap(
-               a => FetchWordsSuccess(a),
-               e => FetchWordsError(e),
-             ),
-        );
-  | FetchWordsSuccess(data) =>
-    ReludeReact.Reducer.Update({result: Relude.AsyncResult.completeOk(data)})
-  | FetchWordsError(error) =>
-    ReludeReact.Reducer.Update({
-      result: Relude.AsyncResult.completeError(error),
-    })
-  };
-};
+let initialState = {result: Pending};
 
 let useApi = () => {
   let url = ReasonReact.Router.useUrl();
 
   let (state, send) =
-    ReludeReact.Reducer.useReducer(reducer(true), initialState);
+    ReactUpdate.useReducer(initialState, (action, _state) =>
+      switch (action) {
+      | FetchWords =>
+        UpdateWithSideEffects(
+          {result: Loading},
+          ({send}) => {
+            let location = ReasonReact.Router.dangerouslyGetInitialUrl();
+            let query = location.search;
+            let foundWords =
+              query
+              ->Utils.extractQuery
+              ->Utils.decodeURIComponent
+              ->Utils.find(decodedWordsData.data);
+            let result: Utils.entries = {data: foundWords};
 
-  ReludeReact.Effect.useOnMount(() => send(FetchWords));
+            send(FetchWordsSuccess(result));
+
+            None;
+          },
+        )
+      | FetchWordsSuccess(data) => Update({result: Complete(Ok(data))})
+      | FetchWordsError(err) => Update({result: Complete(Error(err))})
+      }
+    );
+
+  React.useEffect0(() => {
+    send(FetchWords);
+    None;
+  });
 
   React.useEffect1(() => Some(() => send(FetchWords)), [|url.search|]);
 

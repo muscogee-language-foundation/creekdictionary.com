@@ -12,3 +12,5 @@ let make = () => {
      }}
   </Frame>;
 };
+
+let default = make;

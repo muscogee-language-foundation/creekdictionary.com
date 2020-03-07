@@ -16,8 +16,6 @@
     "bs-fetch",
     "reason-loadable",
     "reason-react",
-    "relude",
-    "relude-fetch",
-    "relude-reason-react"
+    "reason-react-update"
   ]
 }

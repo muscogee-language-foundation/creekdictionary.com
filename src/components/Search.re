@@ -13,16 +13,21 @@ let make =
     (~modifyButtonCss=None, ~modifySearchCss=None, ~modifyContainerCss=None) => {
   let location = ReasonReact.Router.dangerouslyGetInitialUrl();
   let query = location.search;
-  let words = query |> decodeURIComponent |> extractQuery;
+  let words = query->extractQuery->decodeURIComponent;
   let (state, dispatch) =
     React.useReducer(
       (_state, action) =>
         switch (action) {
-        | Input(words) => {words, encodedWords: encodeURIComponent(words)}
+        | Input(words) => {words, encodedWords: words->encodeURIComponent}
         },
-      {words, encodedWords: encodeURIComponent(words)},
+      {words, encodedWords: words->encodeURIComponent},
     );
 
+  /**
+   * Multiple words are not encoded when pushed to the url for some reason
+   * Need to invetigage this further
+   * AR - 2020/03/07
+   */
   let {words, encodedWords} = state;
 
   <div className={Belt.Option.getWithDefault(modifyContainerCss, "")}>

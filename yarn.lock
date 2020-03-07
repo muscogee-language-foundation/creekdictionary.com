@@ -5448,6 +5448,11 @@ reason-loadable@0.6.2:
     react-dom "^16.8.6"
     reason-react "^0.7.0"
 
+reason-react-update@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/reason-react-update/-/reason-react-update-1.0.0.tgz#c2e9f064fb665e24d35073a93f901c5792fdf36f"
+  integrity sha512-apsqywkgcEnkAc7V9fOs5ikEmufgYkxcLu5fqYWQ2Atb4UlYnoN7P92Xal3izReyqfk41G4zHlPHwJhoq0xwIA==
+
 reason-react@0.7.0, reason-react@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.7.0.tgz#46a975c321e81cd51310d7b1a02418ca7667b0d6"
@@ -5537,21 +5542,6 @@ relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
-
-relude-fetch@0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/relude-fetch/-/relude-fetch-0.6.0.tgz#026f719346c7fdd6b268e5a0e3cb3524d19e1d41"
-  integrity sha512-sI3UdV5b+sZLy2/VIu1CKtsSotza8kGZ0PLgq9C+dHFpblRb+da8bTVx9cOgB/OLePLUaBUJCxWcdAR/i0rDxA==
-
-relude-reason-react@0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/relude-reason-react/-/relude-reason-react-0.8.0.tgz#ee2d6d4eadcfe9c0cf5b88bcc0273e0515618f4f"
-  integrity sha512-/f2bKtlsrmJ4/AwmOVCljo8oGohd0MC0dRgSoQVKBth22Wv9w9LVFCqkTQCjJ8OrOINB4UvDFUMoNehpKbBroQ==
-
-relude@0.46.0:
-  version "0.46.0"
-  resolved "https://registry.yarnpkg.com/relude/-/relude-0.46.0.tgz#2f57ef586bf2f6848be3c972aacd8bc39f0d5d46"
-  integrity sha512-oxdI5TgT+4mvGsyEWyFkpQLm73Wv48usXjzHOuws1bfXAUkXVDRR13gTefP0e88/fQ+Bqtkg6nmM+LVhL/b5iw==
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
