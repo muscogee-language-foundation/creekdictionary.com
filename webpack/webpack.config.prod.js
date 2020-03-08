@@ -40,6 +40,11 @@ module.exports = {
   },
   plugins: [
     new GenerateSW({
+      mode: "production",
+      navigationPreload: true,
+      navigateFallback: "../src/index.html",
+      clientsClaim: true,
+      skipWaiting: true,
       runtimeCaching: [
         {
           urlPattern: /assets/,

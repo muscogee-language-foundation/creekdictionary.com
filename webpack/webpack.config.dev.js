@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { GenerateSW } = require("workbox-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
@@ -44,6 +45,19 @@ module.exports = {
   },
   stats: "minimal",
   plugins: [
+    new GenerateSW({
+      mode: "development",
+      navigationPreload: true,
+      navigateFallback: "../src/index.html",
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: /assets/,
+          handler: "CacheFirst"
+        }
+      ]
+    }),
     new Dotenv({
       path: "./.env.dev",
       safe: true
