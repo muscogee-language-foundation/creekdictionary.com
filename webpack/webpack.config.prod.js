@@ -42,7 +42,7 @@ module.exports = {
     new GenerateSW({
       mode: "production",
       navigationPreload: true,
-      navigateFallback: "../src/index.html",
+      navigateFallback: "index.html",
       clientsClaim: true,
       skipWaiting: true,
       runtimeCaching: [
