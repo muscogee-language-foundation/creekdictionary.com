@@ -1,5 +1,6 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { GenerateSW } = require("workbox-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
@@ -45,6 +46,7 @@ module.exports = {
   },
   stats: "minimal",
   plugins: [
+    new CopyPlugin([{ from: "public", to: "public" }]),
     new GenerateSW({
       mode: "development",
       navigationPreload: true,
