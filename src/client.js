@@ -7,6 +7,6 @@ ReactDOM.render(<App />, document.querySelector("#root"));
 
 if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
   window.addEventListener("load", function() {
-    navigator.serviceWorker.register("/service-worker.js");
+    navigator.serviceWorker.register("dist/service-worker.js");
   });
 }
