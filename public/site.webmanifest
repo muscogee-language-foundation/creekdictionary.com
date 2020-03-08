@@ -17,6 +17,6 @@
   "theme_color": "#4299e1",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "../",
+  "start_url": "https://creekdictionary.com",
   "scope": "/"
 }
