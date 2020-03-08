@@ -54,6 +54,12 @@ module.exports = {
       filename: "index.html"
     })
   ],
+  resolve: {
+    alias: {
+      react: "preact/compat",
+      "react-dom": "preact/compat"
+    }
+  },
   devServer: {
     contentBase: path.join(__dirname, "../dist"),
     historyApiFallback: true,
