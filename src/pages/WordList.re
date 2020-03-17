@@ -27,7 +27,8 @@ let make = () => {
                    " match"->text
                    {Belt.Array.length(result.data) === 1 ? "" : "es"}->text
                  </div>
-                 <div className="flex flex-wrap">
+                 <div
+                   className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                    {result.data
                     ->Belt.Array.map(entry =>
                         <Match key={entry.creek} entry />
