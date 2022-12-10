@@ -18,7 +18,7 @@
     "@glennsl/bs-json": "5.0.2",
     "bs-dynamic-import": "0.4.0",
     "bs-fetch": "0.5.2",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "prerender-node": "3.2.5",
     "react": "16.12.0",
     "react-dom": "16.12.0",
